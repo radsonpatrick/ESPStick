@@ -59,11 +59,11 @@ try:
                         .add(EnumItem("Mode", ['AP', 'CLIENT'], wifi.mode,wifi.mode))
                         .add(InfoItem('Status:',wifi.status))
                         .add(InfoItem('IP:',wifi.ip))
+                        .add(CallbackList('Scan',wifi.scan))
                         )
                     .add(SubMenuItem('Lights')
                             .add(ToggleItem('LED', (led.stat), (led.toggle)))
-                            #.add(DrawList('thocu',['radson','naomi','iris']))
-
+                            
                             )
                     .add(SubMenuItem('Advanced')
                             .add(FileList('Scripts'))

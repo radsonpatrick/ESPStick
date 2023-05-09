@@ -57,9 +57,10 @@ class Wifi:
                 return 1
     
     def scan(self):
+        
         print('start_scanning')
         a = []
-        for result in self.wifi.scan() :
+        for result in self.wifi_sta.scan() :
             a.append({result[0].decode('utf-8')[:11] :result[3]})
         return a 
     def to_ap(self):

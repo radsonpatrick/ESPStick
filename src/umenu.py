@@ -438,3 +438,53 @@ class FilePreview(CustomItem):
 
     def draw(self):
         exec(open(SCRIPT_DIRECTORY+ self._file).read())
+
+
+class CallbackList(SubMenuItem):
+
+    def __init__(self, name,callback):
+        super().__init__(name)
+        self.callback = callback
+    
+    def teste(self):
+        if self._check_callable(self.callback):
+            result = self._call_callable(self.callback)
+            self.menu._items = []
+            builder = self.menu
+            for i in result:
+                for k,v in i.items():
+                    builder.add(Item(k,v))
+            builder.add(BackItem(),self.parent)
+    
+    def click(self):
+        DISPLAY.fill_rect(30, 100, 170, 40, 0x07E0)
+        DISPLAY.text(font,'Scanning..',int((DISPLAY.width()/2)-((len('Scanning..')*font.WIDTH)/2)),108,0,0x07E0)
+        self.teste()
+        return self.menu
+
+
+class Item(SubMenuItem):
+    def __init__(self, name,decorator):
+        super().__init__(name)
+        self.decorator = str(decorator)
+        self.name = str(name[:10])
+        #self.menu._items = []
+    
+    def add_sub_items(self):
+        self.menu._items = []
+        self.menu.add(InfoItem('RSSI',decorator='-53'),self.parent)
+        self.menu.add(BackItem(),self.parent) 
+    
+    def click(self):
+        self.add_sub_items()
+        return self.menu
+    
+    #def select(self):
+    #    self.add_sub_items()
+    #    return self.parent
+
+    def get_decorator(self):
+        return self.decorator
+    
+    def draw(self):
+        DISPLAY.fill(0x1234)

@@ -8,8 +8,8 @@ LOG_FILE = 0
 
 #Config
 WIFI_MODE = 'Client'  ## Client or AP
-WIFI_SSID = 'Naomi&Iris' ## SSID client or AP mode
-WIFI_PASS = 'F@milia12341234'
+WIFI_SSID = 'YOUR SSID' ## SSID client or AP mode
+WIFI_PASS = 'YOUR PASSWORD'
 
 WEBREPL_PASS = '1234'
 
