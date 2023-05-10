@@ -25,13 +25,13 @@ ESPStick is a project that aims to turn the ESP32 into a Swiss Army Knife with i
 
 ## Installation
 
-1. Load the `esp32_display.bin` firmware to your ESP32 board (we recommend using the Lolin32 Lite).
+1. Load the `esp32_display.bin` firmware to your ESP32 board (we recommend using the Lolin32 Lite,but firmware is ESP32 Generic).
 2. Clone this repository.
 3. Upload the files inside the `src` folder to the root directory of your ESP32 board.
 
 ## Equipment
 
-1. Lolin32 Lite 4mb
+1. Lolin32 Lite 4mb,but no have problem use ESP32 Generic
 2. Display GMT130 ST7789 (compatible) 240x240 1.3"
 3. Two push-buttons
 4. Battery 850mAh (the one I had on hand)
@@ -49,7 +49,7 @@ ESPStick is a project that aims to turn the ESP32 into a Swiss Army Knife with i
   - AP (access point) mode and client mode
   - Status of the wifi connection (connected or not)
   - View IP address of the connected wifi network
-  - Scan for available wifi networks (work in progress)
+  - Scan for available wifi networks, and infos(SSID,SECURITY,RSSI,HIDDEN)
 - Lights
   - Turn on the GPIO22 LED on the Lolin32 board
 - Advanced
@@ -65,10 +65,9 @@ ESPStick is a project that aims to turn the ESP32 into a Swiss Army Knife with i
 This list is subject to change, but some potential future development ideas include:
 
 1. Documentation (this is very necessary but also very time-consuming)
-2. Scan wifi - create a sub-menu to view all information about the available wifi networks
-3. Bluetooth
-4. Add all GPIOs for control
-5. Improve the Scripts section
-6. Create a sub-menu with power options
+2. Bluetooth
+3. Add all GPIOs for control
+4. Improve the Scripts section
+5. Create a sub-menu with power options
 
 Again, contributions and suggestions are welcome!
