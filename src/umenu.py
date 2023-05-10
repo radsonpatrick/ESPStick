@@ -1,5 +1,5 @@
 from fonts import vga1_16x32 as font
-from variables import * 
+from config import * 
 
 class MenuItem:
 

@@ -15,6 +15,10 @@ WEBREPL_PASS = '1234'
 
 SCRIPT_DIRECTORY = 'scripts/'
 
+###gpios
+BUTTON1 = 14
+BUTTON2 = 27
+LED = 22
 
 ##Display
 BACK_ITEM_NAME = '< BACK'

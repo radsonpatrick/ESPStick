@@ -2,7 +2,7 @@ from utime import sleep
 from fonts import vga1_16x32 as font
 import webrepl
 import network 
-from variables  import WEBREPL_PASS,WIFI_SSID,WIFI_PASS
+from config  import WEBREPL_PASS,WIFI_SSID,WIFI_PASS
 class Device:
     def __init__(self,gpio):
         self.pin = gpio
@@ -22,7 +22,7 @@ class Device:
 
 class Wifi: 
     def __init__(self):
-        from variables import DISPLAY
+        from config import DISPLAY
         self.display = DISPLAY
         self.wifi_ap = network.WLAN(network.AP_IF)
         self.wifi_sta = network.WLAN(network.STA_IF)
