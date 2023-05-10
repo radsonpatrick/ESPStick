@@ -3,9 +3,11 @@
 ESPStick is a project that aims to turn the ESP32 into a Swiss Army Knife with infinite possibilities using MicroPython. This project is still under development, and contributions and suggestions are welcome.
 
 ## Images:
-  ![Alt Text](/img/view1.jpeg)
-  ![Alt Text](/img/view2.jpeg)
-  ![Alt Text](/img/view3.jpeg)
+  <div class="grid-container">
+  <img src="img/view1.jpg" alt="Imagem 1" style="width: 200px;height: 200px;">
+  <img src="img/view2.jpg" alt="Imagem 2" style="width: 150px;height: 200px;">
+  <img src="img/view3.jpg" alt="Imagem 3" style="width: 150px;height: 200px;">
+</div>
 
 ## Installation
 
