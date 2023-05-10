@@ -7,7 +7,21 @@ ESPStick is a project that aims to turn the ESP32 into a Swiss Army Knife with i
   <img src="img/view1.jpg" alt="Imagem 1" style="width: 200px;height: 200px;">
   <img src="img/view2.jpg" alt="Imagem 2" style="width: 150px;height: 200px;">
   <img src="img/view3.jpg" alt="Imagem 3" style="width: 150px;height: 200px;">
-</div>
+  <img src="img/view4.jpeg" alt="Imagem 1" style="width: 150px;height: 200px;">
+  <img src="img/view5.jpeg" alt="Imagem 2" style="width: 150px;height: 200px;">
+  </div>
+  <div class="grid-container">
+  <img src="img/start.jpeg" alt="Imagem 3" style="width: 150px;height: 200px;">
+  <img src="img/connected_after_start_page.jpeg" alt="Imagem 1" style="width: 150px;height: 200px;">
+  <img src="img/main_menu.jpeg" alt="Imagem 2" style="width: 150px;height: 200px;">
+  <img src="img/wifi_options.jpeg" alt="Imagem 3" style="width: 150px;height: 200px;">
+  <img src="img/wifi_start_scan.jpeg" alt="Imagem 3" style="width: 150px;height: 200px;">
+  </div>
+  <div class="grid-container">
+  <img src="img/scan_result.jpeg" alt="Imagem 3" style="width: 150px;height: 200px;">
+  <img src="img/scan_result_details.jpeg" alt="Imagem 3" style="width: 150px;height: 200px;">
+  <img src="img/advanced_menu.jpeg" alt="Imagem 3" style="width: 150px;height: 200px;">
+  </div>
 
 ## Installation
 
