@@ -20,7 +20,9 @@ ESPStick is a project that aims to turn the ESP32 into a Swiss Army Knife with i
 ### Features
 
 ## Features
-
+- Safe Mode:
+  - During boot, press and hold `button2` defined in config.py to activate safe mode. This will start the `access point (AP)` mode with the following settings: `SSID:ESP32` and 
+    `Password:12345678`.Additionally, WebREPL will be started with the password `1234`. This mode is useful for fixing any issues that may have occurred in your code.
 - WIFI
   - Automatic connection to wifi upon boot-up
   - AP (access point) mode and client mode
