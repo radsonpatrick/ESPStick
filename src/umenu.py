@@ -415,11 +415,17 @@ class FileList(SubMenuItem):
 
     def prepare_list(self):
         import os
-        files = os.listdir(SCRIPT_DIRECTORY)
+        try: 
+            files = os.listdir(SCRIPT_DIRECTORY)
+        except:
+            files =[]
         self.menu._items = []
         builder = self.menu
-        for file in files:
-            builder.add(FilePreview(file))
+        if len(files) > 0: 
+            for file in files:
+                builder.add(FilePreview(file))
+        else:
+            builder.add(FilePreview('Files Not Found'))
         builder.add(BackItem(),self.parent)
 
     def click(self):
@@ -437,8 +443,10 @@ class FilePreview(CustomItem):
         return self.parent
 
     def draw(self):
-        exec(open(SCRIPT_DIRECTORY+ self._file).read())
-
+        if self._file != 'Files Not Found':
+            exec(open(SCRIPT_DIRECTORY+ self._file).read())
+        else:
+            pass
 
 class CallbackList(SubMenuItem):
 
@@ -478,10 +486,6 @@ class Item(SubMenuItem):
     def click(self):
         self.add_sub_items()
         return self.menu
-    
-    #def select(self):
-    #    self.add_sub_items()
-    #    return self.parent
 
     def get_decorator(self):
         return self.decorator
