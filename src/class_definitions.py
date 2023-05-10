@@ -60,8 +60,24 @@ class Wifi:
         
         print('start_scanning')
         a = []
+        security_dict = {
+            0:'Open',
+            1:'WEP',
+            2:'WPA-PSK',
+            3:'WPA2-PSK',
+            4:'WPA/WPA2-PSK',
+        }
         for result in self.wifi_sta.scan() :
-            a.append({result[0].decode('utf-8')[:11] :result[3]})
+            a.append({
+                result[0].decode('utf-8')[:11]:
+                {
+                 'rssi':result[3],
+                 'ch':result[2],
+                 'type':security_dict.get(result[4]),
+                 'hidden':'yes' if result[5] else 'no'
+                }
+             })
+
         return a 
     def to_ap(self):
         if self.mode() ==1:
