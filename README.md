@@ -2,6 +2,11 @@
 
 ESPStick is a project that aims to turn the ESP32 into a Swiss Army Knife with infinite possibilities using MicroPython. This project is still under development, and contributions and suggestions are welcome.
 
+## Images:
+  ![Alt Text](/img/view1.jpeg)
+  ![Alt Text](/img/view2.jpeg)
+  ![Alt Text](/img/view3.jpeg)
+
 ## Installation
 
 1. Load the `esp32_display.bin` firmware to your ESP32 board (we recommend using the Lolin32 Lite).
