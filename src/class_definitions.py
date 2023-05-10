@@ -27,7 +27,6 @@ class Wifi:
         self.wifi_ap = network.WLAN(network.AP_IF)
         self.wifi_sta = network.WLAN(network.STA_IF)
 
-
     def ip(self):
         if self.mode() == 0:
             return '192.168.4.1'
@@ -67,6 +66,10 @@ class Wifi:
             3:'WPA2-PSK',
             4:'WPA/WPA2-PSK',
         }
+        self.mode_status = 'AP' if self.mode() == 0 else 'STA'
+
+        self.wifi_ap.active(False)
+        self.wifi_sta.active(True)
         for result in self.wifi_sta.scan() :
             a.append({
                 result[0].decode('utf-8')[:11]:
@@ -77,18 +80,27 @@ class Wifi:
                  'hidden':'yes' if result[5] else 'no'
                 }
              })
-
-        return a 
-    def to_ap(self):
-        if self.mode() ==1:
+        if self.mode_status == 'AP':
             self.wifi_sta.active(False)
             self.wifi_ap.active(True)
             self.wifi_ap.config(essid='ESP32', password='12345678')
-            webrepl.start(password=WEBREPL_PASS)
-    
-    def to_client(self):
+        return a 
         
+    def to_ap(self):
+        print('ap_mode starting')
+        self.wifi_sta.active(False)
+        self.wifi_ap.active(True)
+        self.wifi_ap.config(essid='ESP32', password='12345678')
+        webrepl.start(password=WEBREPL_PASS)
+        self.display.fill(0)
+        text_y = abs(int((self.display.height()/2)-((2*font.HEIGHT)/2)))
+        self.display.text(font,'Started AP Mode',int((self.display.width()/2)-((len('Started AP Mode')*font.WIDTH)/2)),text_y)
+        sleep(2)
+        self.display.fill(0)
+    def to_client(self):
+        self.status = False
         for i in range(0,5):
+            
             self.wifi_sta.active(True)
             self.display.fill(0)
             text_y = abs(int((self.display.height()/2)-((2*font.HEIGHT)/2)))
@@ -108,6 +120,8 @@ class Wifi:
                 self.display.text(font,'Connected',int((self.display.width()/2)-((len('Connected')*font.WIDTH)/2)),text_y,0,0x07E0)
                 sleep(2)
                 self.display.fill(0)
+                self.status = True
                 break
             self.wifi_sta.active(False)
-                
+        if self.status == False:
+            self.to_ap()
